@@ -22,18 +22,3 @@ jobs:
           sdcard-path-or-size: 20G
           ram-size: 4000M
           script: ./gradlew jacocoTestReport connectedCheck
-      - name: Upload Reports
-        uses: actions/upload-artifact@v1
-        with:
-          name: reports
-          path: app/build/reports
-      - name: Upload builds
-        uses: actions/upload-artifact@v1
-        with:
-          name: reports
-          path: app/build/outputs
-      - name: Upload coverage reports to Codecov
-        run: |
-          curl -Os https://uploader.codecov.io/latest/macos/codecov
-          chmod +x codecov
-          ./codecov
