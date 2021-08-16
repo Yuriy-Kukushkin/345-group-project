@@ -13,6 +13,8 @@ jobs:
       - name: Set environment variable
         run: export ADB_INSTALL_TIMEOUT=20
       - uses: actions/checkout@v2
+      - name: show disk space
+        run: df
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
       - name: Build with Gradle
